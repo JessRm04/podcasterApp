@@ -1,0 +1,26 @@
+/* Definir estilos para la tarjeta de cada podcast */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  border-top: none;
+  padding: 10px;
+  margin: 60px;
+  width: 250px;
+  position: relative; 
+}
+
+/* Estilos específicos para imagen */
+.card img {
+  width: 40%;
+  height: auto;
+  border-radius: 100%;
+  margin-bottom: 60px;
+  position: absolute; 
+  right: 80px;
+  top: -60px;
+  z-index: 1;
+}
+
+.imageContainer{
+  position: relative; 
+}
