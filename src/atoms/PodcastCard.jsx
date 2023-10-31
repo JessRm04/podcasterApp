@@ -7,8 +7,10 @@ const PodcastCard = ({ image, name, artist }) => {
       <div className="imageContainer">
         <img src={image} alt={name} />
       </div>
-      <h3>{name}</h3>
-      <p>Author: {artist}</p>
+      <div className="text">
+        <h3>{name}</h3>
+        <p>Author: {artist}</p>
+      </div>
     </div>
   );
 };
