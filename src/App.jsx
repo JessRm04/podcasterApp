@@ -6,7 +6,6 @@ import Header from './atoms/Header/Header'
 function App() {
   return (
     <div>
-      <Header/>
       <MainPage/>
     </div>
   );

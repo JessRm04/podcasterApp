@@ -1,11 +1,11 @@
 import React from 'react';
-import './Header.css'; // Importa tu archivo de estilos CSS
+import './header.css'; 
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="brand">Podcaster</div>
-    </header>
+    <navbar className="header">
+        <p>Podcaster</p>
+    </navbar>
   );
 };
 
