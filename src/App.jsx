@@ -1,18 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import PodcastBox from './molecules/PodcastBox'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import MainPage from './pages/MainPage'
+import Header from './atoms/Header/Header'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     <MainPage/>
-    </>
-  )
+    <div>
+      <Header/>
+      <MainPage/>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,10 +1,10 @@
+import React from "react";
 import { useState } from 'react'
-import PodcastBox from '../molecules/PodcastBox'
+import PodcastBox from '../molecules/PodcastBox/PodcastBox'
+
 
 
 function MainPage() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
      <PodcastBox/>

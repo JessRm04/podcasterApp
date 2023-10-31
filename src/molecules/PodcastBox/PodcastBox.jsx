@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './PodcastBox.css'
-import PodcastCard from '../atoms/PodcastCard';
+import PodcastCard from '../../atoms/PodcastCard/PodcastCard'
 
 const PodcastBox = () => {
   const [podcasts, setPodcasts] = useState([]);
@@ -24,7 +24,7 @@ const PodcastBox = () => {
   }, []);
 
   return (
-    <div>
+    <div className="podcastBox">
       {podcasts.map((podcast) => (
         <PodcastCard
           key={podcast.id.label} 

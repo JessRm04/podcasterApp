@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.brand {
+  color: #007bff; 
+  font-size: 24px;
+  font-weight: bold;
+}
