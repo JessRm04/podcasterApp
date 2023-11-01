@@ -3,9 +3,9 @@ import './header.css';
 
 const Header = () => {
   return (
-    <navbar className="header">
+    <header className="header">
         <p>Podcaster</p>
-    </navbar>
+    </header>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PodcastBox.css';
 import PodcastCard from '../../atoms/PodcastCard/PodcastCard';
-import SearchBar from '../../atoms/SearchBar/Searchbar'
+import SearchBar from '../../atoms/Searchbar/Searchbar'
 import PodcastCounter from '../../atoms/PodcastCounter/PodcastCounter'
 
 const PodcastBox = () => {
