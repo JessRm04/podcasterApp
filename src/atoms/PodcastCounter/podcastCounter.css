@@ -1,0 +1,14 @@
+.podcastCounter{
+  color:rgb(255, 255, 255);
+  background-color:#007bff;
+  width: 45px;
+  height: 30px;
+  text-align: center;
+  text-justify: center;
+  border-radius: 25%;
+
+}
+
+.podcastCounter p {
+  margin-top: 4px;
+}

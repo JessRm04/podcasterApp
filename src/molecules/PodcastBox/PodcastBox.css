@@ -1,3 +1,15 @@
+.searchBox {
+  width: 1300px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  z-index: 3;
+}
+
+
 .podcastBox{
   display: flex;
   flex-wrap: wrap;

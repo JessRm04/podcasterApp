@@ -1,7 +1,7 @@
 .searchbar {
-  position:fixed;
+
   z-index: 3;
-padding: 0 20px;
+  padding: 0 20px;
 }
 
 .searchbar input  {
