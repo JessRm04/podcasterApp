@@ -1,9 +1,14 @@
 import React from 'react';
-import './podcastCard.css'
+import './PodcastCard.css';
 
-const PodcastCard = ({ image, name, artist }) => {
+const PodcastCard = ({ image, name, artist, podcastId, handleCardClick, isSelected }) => {
+  
+  const cardClick = () => {
+    handleCardClick(podcastId);
+  };
+
   return (
-    <div className="card">
+    <div className={`card ${isSelected ? 'selected' : ''}`} onClick={cardClick}>
       <div className="imageContainer">
         <img src={image} alt={name} />
       </div>
