@@ -40,9 +40,20 @@ const PodcastBox = () => {
     setFilteredCount(filtered.length);
   }, [searchTerm, podcasts]);
 
-  const handlePodcastClick = (podcastId) => {
-    setSelectedPodcastId(podcastId);
+  const handlePodcastClick = (podcastIdUrl) => {
+    const idStartIndex = podcastIdUrl.lastIndexOf('id'); // Encontrar el índice donde comienza 'id'
+    if (idStartIndex !== -1) {
+      const idWithExtras = podcastIdUrl.substring(idStartIndex + 2); // Obtener la parte del ID con extras
+      const idEndIndex = idWithExtras.indexOf('?'); // Buscar el índice de '?' que indica parámetros
+      const id = idEndIndex !== -1 ? idWithExtras.substring(0, idEndIndex) : idWithExtras;
+      
+      console.log('Podcast ID:', id);
+      setSelectedPodcastId(id);
+    } else {
+      console.error('URL de podcast no válida');
+    }
   };
+  
 
   return (
     <>

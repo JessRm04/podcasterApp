@@ -1,6 +1,6 @@
-// PodcastDescriptionBox.js
 import React, { useState, useEffect } from 'react';
 import PodcastDescription from '../../atoms/PodcastDescription/PodcastDescription';
+import PodcastEpisodes from '../../atoms/PodcastEpisodes/PodcastEpisodes';
 
 const PodcastDescriptionBox = ({ podcastId }) => {
   const [selectedPodcast, setSelectedPodcast] = useState(null);
@@ -13,7 +13,10 @@ const PodcastDescriptionBox = ({ podcastId }) => {
         }
 
         // Construir la URL del podcast usando el ID
-        const podcastUrl = `https://podcasts.apple.com/us/podcast/class-of-88-with-will-smith/${podcastId}?uo=2`;
+        const podcastUrl = ` https://itunes.apple.com/lookup?id=${podcastId}&entity=podcastEpisode`;
+
+        console.log('URL del podcast:', podcastUrl); // Comprobar la URL enviada mediante fetch
+
 
         const response = await fetch(podcastUrl);
 
@@ -32,16 +35,19 @@ const PodcastDescriptionBox = ({ podcastId }) => {
   }, [podcastId]);
 
   if (!selectedPodcast) {
-    return <div>Cargando detalles del podcast...</div>;
+    return ; // *NOTA: El json de itunes para la dirección indicada no provee descripciones de los podcast
   }
-
+  console.log(selectedPodcast)
   return (
+    <div>
     <PodcastDescription
-      name={selectedPodcast.name}
-      artist={selectedPodcast.artistName}
-      description={selectedPodcast.description}
-      imageUrl={selectedPodcast.artworkUrl100}
-    />
+    name={selectedPodcast.collectionName}
+    artist={selectedPodcast.artistName}
+    description={selectedPodcast.description}
+    imageUrl={selectedPodcast.artworkUrl100}
+  />
+
+  </div>
   );
 };
 
