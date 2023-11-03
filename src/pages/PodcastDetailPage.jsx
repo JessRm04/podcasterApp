@@ -11,7 +11,6 @@ function PodcastDetailPage() {
   return (
     <>
      <Header/>
-     <PodcastBox/>
      <PodcastDescriptionBox/>
     </>
   )

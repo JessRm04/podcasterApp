@@ -1,14 +1,24 @@
 import React from 'react';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import MainPage from './pages/MainPage'
 import Header from './atoms/Header/Header'
 import PodcastDetailPage from './pages/PodcastDetailPage'
 
-function App() {
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<MainPage />}>
+      <Route path="login" element={<PodcastDetailPage />} />
+    </Route>
+  )
+)
+
+function App({routes}) {
+
   return (
-    <div>
-      <PodcastDetailPage/>
-    </div>
+    <>
+      <RouterProvider router={router}/>
+    </>
   );
 }
 
