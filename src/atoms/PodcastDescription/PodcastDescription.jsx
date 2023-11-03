@@ -1,7 +1,7 @@
 import React from 'react';
-import './PodcastDescription.css'; // Ajusta la ruta del archivo CSS
+import './PodcastDescription.css'; 
 
-const PodcastDescription = ({ name, artist, description, imageUrl }) => {
+const PodcastDescription = ({ name, artist, imageUrl }) => {
   return (
     <div className="PodcastDescriptionContainer">
       <img src={imageUrl} alt={name} />

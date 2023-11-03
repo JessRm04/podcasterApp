@@ -1,0 +1,4 @@
+.descriptionBox{
+  display: flex;
+  flex-direction: row;
+}

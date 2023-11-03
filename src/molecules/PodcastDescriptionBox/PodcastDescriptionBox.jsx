@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PodcastDescription from '../../atoms/PodcastDescription/PodcastDescription';
 import PodcastEpisodes from '../../atoms/PodcastEpisodes/PodcastEpisodes';
+import './podcastDescriptionBox.css'
+
+
 
 const PodcastDescriptionBox = ({ podcastId }) => {
   const [selectedPodcast, setSelectedPodcast] = useState(null);
+  
 
   useEffect(() => {
     const fetchPodcast = async () => {
@@ -37,18 +41,20 @@ const PodcastDescriptionBox = ({ podcastId }) => {
   if (!selectedPodcast) {
     return ; // *NOTA: El json de itunes para la dirección indicada no provee descripciones de los podcast
   }
+
+
+
   console.log(selectedPodcast)
   return (
-    <div>
+    <div className='descriptionBox'>
     <PodcastDescription
     name={selectedPodcast.collectionName}
     artist={selectedPodcast.artistName}
-    description={selectedPodcast.description}
     imageUrl={selectedPodcast.artworkUrl100}
-  />
-
-  </div>
-  );
-};
+    />
+    <PodcastEpisodes podcastId={podcastId} />
+    </div>
+    );
+    };
 
 export default PodcastDescriptionBox;
