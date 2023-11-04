@@ -1,5 +1,5 @@
-// PodcastBox.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PodcastBox.css';
 import PodcastCard from '../../atoms/PodcastCard/PodcastCard';
 import SearchBar from '../../atoms/Searchbar/Searchbar';
@@ -12,6 +12,7 @@ const PodcastBox = () => {
   const [filteredPodcasts, setFilteredPodcasts] = useState([]);
   const [filteredCount, setFilteredCount] = useState(100);
   const [selectedPodcastId, setSelectedPodcastId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getPodcasts = async () => {
@@ -41,19 +42,20 @@ const PodcastBox = () => {
   }, [searchTerm, podcasts]);
 
   const handlePodcastClick = (podcastIdUrl) => {
-    const idStartIndex = podcastIdUrl.lastIndexOf('id'); // Encontrar el índice donde comienza 'id'
+    const idStartIndex = podcastIdUrl.lastIndexOf('id');
     if (idStartIndex !== -1) {
-      const idWithExtras = podcastIdUrl.substring(idStartIndex + 2); // Obtener la parte del ID con extras
-      const idEndIndex = idWithExtras.indexOf('?'); // Buscar el índice de '?' que indica parámetros
+      const idWithExtras = podcastIdUrl.substring(idStartIndex + 2);
+      const idEndIndex = idWithExtras.indexOf('?');
       const id = idEndIndex !== -1 ? idWithExtras.substring(0, idEndIndex) : idWithExtras;
-      
-      console.log('Podcast ID:', id);
-      setSelectedPodcastId(id);
-    } else {
-      console.error('URL de podcast no válida');
+
+      if (id) {
+        setSelectedPodcastId(id);
+        navigate(`/podcast/${id}`);
+      } else {
+        console.error('URL de podcast no válida');
+      }
     }
   };
-  
 
   return (
     <>
@@ -79,8 +81,7 @@ const PodcastBox = () => {
           />
         ))}
       </div>
-
-      {selectedPodcastId && <PodcastDescriptionBox podcastId={selectedPodcastId} />}
+      {/* {selectedPodcastId && <PodcastDescriptionBox podcastId={selectedPodcastId} />} */}
     </>
   );
 };

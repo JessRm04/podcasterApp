@@ -1,5 +1,6 @@
 import React from 'react';
 import './PodcastCard.css';
+import { Link } from 'react-router-dom';
 
 const PodcastCard = ({ image, name, artist, podcastId, handleCardClick, isSelected }) => {
   
@@ -7,15 +8,22 @@ const PodcastCard = ({ image, name, artist, podcastId, handleCardClick, isSelect
     handleCardClick(podcastId);
   };
 
+  const extractIdFromUrl = (podcastUrl) => {
+    const id = podcastUrl.match(/\d+/);
+    return id ? id[0] : null;
+  };
+
   return (
     <div className={`card ${isSelected ? 'selected' : ''}`} onClick={cardClick}>
-      <div className="imageContainer">
-        <img src={image} alt={name} />
-      </div>
-      <div className="text">
-        <h3>{name}</h3>
-        <p>Author: {artist}</p>
-      </div>
+      <Link to={`/podcast/${extractIdFromUrl(podcastId)}`} onClick={() => handleCardClick(podcastId)}>
+        <div className="imageContainer">
+          <img src={image} alt={name} />
+        </div>
+        <div className="text">
+          <h3>{name}</h3>
+          <p>Author: {artist}</p>
+        </div>
+      </Link>
     </div>
   );
 };

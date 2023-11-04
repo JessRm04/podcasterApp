@@ -1,19 +1,17 @@
-import React from "react";
-import { useState } from 'react'
+import { useParams } from 'react-router-dom';
 import Header from "../atoms/Header/Header";
-import Searchbar from "../atoms/Searchbar/Searchbar";
 import PodcastDescriptionBox from "../molecules/PodcastDescriptionBox/PodcastDescriptionBox";
-import PodcastBox from "../molecules/PodcastBox/PodcastBox";
 
 
+const PodcastDetailPage = () => {
+  const { podcastId } = useParams();
 
-function PodcastDetailPage() {
   return (
     <>
-     <Header/>
-     <PodcastDescriptionBox/>
+      <Header />
+      <PodcastDescriptionBox podcastId={podcastId}/>
     </>
-  )
-}
+  );
+};
 
-export default PodcastDetailPage
+export default PodcastDetailPage;

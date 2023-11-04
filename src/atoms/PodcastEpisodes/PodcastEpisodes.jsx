@@ -47,7 +47,6 @@ const PodcastEpisodes = ({ podcastId }) => {
           <td className="title">{episode.trackName}</td>
           <td>{new Date(episode.releaseDate).toLocaleDateString()}</td>
           <td>{generateRandomDuration()}</td>
-          <hr></hr>
         </tr>
       ))}
     </tbody>

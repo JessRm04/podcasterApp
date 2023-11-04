@@ -8,7 +8,7 @@ import PodcastDetailPage from './pages/PodcastDetailPage'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainPage />}>
-      <Route path="login" element={<PodcastDetailPage />} />
+    <Route path="/podcast/:podcastId" element={<PodcastDetailPage />}/>
     </Route>
   )
 )
