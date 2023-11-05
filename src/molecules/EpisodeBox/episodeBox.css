@@ -1,6 +1,16 @@
 .episodeBox{
-  color:black
+  display:flex;
+  color:black;
 }
+
+.episodeDescription{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  padding-left:15px;
+  width: 950px;
+  font-size:0.85em ;
+}
+
 
 .soundtrack{
   width: 600px;

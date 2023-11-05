@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { PodcastIdContext } from '../../Context'
 import './podcastEpisodes.css';
 
-const PodcastEpisodes = ({ podcastId, setSelectedEpisode }) => {
-  
+const PodcastEpisodes = ({ podcastId: initialPodcastId, setSelectedEpisode }) => {
+  const { setPodcastId } = useContext(PodcastIdContext); // Obtén setPodcastId del contexto
   const [episodes, setEpisodes] = useState([]);
 
   useEffect(() => {
+    setPodcastId(initialPodcastId); // Actualiza podcastId en el contexto
+
     const fetchEpisodes = async () => {
       try {
-        if (!podcastId) {
+        if (!initialPodcastId) {
           return;
         }
 
-        const episodesUrl = `https://itunes.apple.com/lookup?id=${podcastId}&entity=podcastEpisode`;
+        const episodesUrl = `https://itunes.apple.com/lookup?id=${initialPodcastId}&entity=podcastEpisode`;
 
         const response = await fetch(episodesUrl);
 
@@ -29,11 +32,11 @@ const PodcastEpisodes = ({ podcastId, setSelectedEpisode }) => {
     };
 
     fetchEpisodes();
-  }, [podcastId]);
+  }, [initialPodcastId]);
 
   const handleEpisodeClick = (selected) => {
     console.log('Datos del episodio seleccionado:', selected);
-    setSelectedEpisode(selected);
+    setSelectedEpisode(selected, initialPodcastId);
   };
 
   return (
@@ -55,7 +58,7 @@ const PodcastEpisodes = ({ podcastId, setSelectedEpisode }) => {
               onClick={() => handleEpisodeClick(episode)}
             >
               <td className="title">
-                <Link to={`/podcast/${podcastId}/episode/${episode.trackId}`}>
+                <Link to={`/podcast/${initialPodcastId}/episode/${episode.trackId}`}>
                   {episode.trackName}
                 </Link>
               </td>

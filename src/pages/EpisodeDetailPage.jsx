@@ -1,17 +1,18 @@
-import React, { useContext } from 'react'; // Asegúrate de importar useContext
+import React, { useContext } from 'react'; 
 import { useParams } from 'react-router-dom';
 import Header from '../atoms/Header/Header';
 import EpisodeBox from '../molecules/EpisodeBox/EpisodeBox';
-import { SelectedEpisodeContext } from '../../src/Context' // Asegúrate de que la ruta de importación es correcta
+import { SelectedEpisodeContext, PodcastIdContext } from '../../src/Context'
 
 const EpisodeDetailPage = () => {
-  const { podcastId, episode } = useParams();
-  const { selectedEpisode } = useContext(SelectedEpisodeContext); // Usa selectedEpisode en lugar de setSelectedEpisode
+
+  const { selectedEpisode } = useContext(SelectedEpisodeContext); 
+  const { podcastId} = useContext(PodcastIdContext); 
 
   return (
     <>
       <Header />
-      <EpisodeBox selectedEpisode={selectedEpisode} /> {/* Pasa selectedEpisode como una prop a EpisodeBox */}
+      <EpisodeBox selectedEpisode={selectedEpisode} podcastId={podcastId}/>
     </>
   );
 };

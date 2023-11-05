@@ -15,7 +15,7 @@ const PodcastCard = ({ image, name, artist, podcastId, handleCardClick, isSelect
 
   return (
     <div className={`card ${isSelected ? 'selected' : ''}`} onClick={cardClick}>
-      <Link to={`/podcast/${extractIdFromUrl(podcastId)}`} onClick={() => handleCardClick(podcastId)}>
+      <Link to={`/podcast/${extractIdFromUrl(podcastId)}`} onClick={() => handleCardClick(podcastId)} className="link">
         <div className="imageContainer">
           <img src={image} alt={name} />
         </div>

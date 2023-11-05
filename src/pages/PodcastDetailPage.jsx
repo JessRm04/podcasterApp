@@ -11,7 +11,7 @@ const PodcastDetailPage = () => {
   return (
     <>
       <Header />
-      <PodcastDescriptionBox podcastId={podcastId} setSelectedEpisode={setSelectedEpisode} /> {/* Pasa setSelectedEpisode como una prop a PodcastDescriptionBox */}
+      <PodcastDescriptionBox podcastId={podcastId} /> {/* Pasa setSelectedEpisode como una prop a PodcastDescriptionBox */}
     </>
   );
 };

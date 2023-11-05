@@ -10,6 +10,7 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   color: rgb(63, 63, 63);
   text-align: center;
+  text-decoration: none;
 }
 
 /* Estilos específicos para imagen */
@@ -22,9 +23,16 @@
   top: -40px;
   z-index: 2;
   justify-self: center;
+  text-decoration: none;
 }
 
 .text {
  padding-top: 16px;
  line-height: 1em;
+ text-decoration: none;
+}
+
+.link{
+  text-decoration: none;
+  color: #2c2c2c; 
 }
