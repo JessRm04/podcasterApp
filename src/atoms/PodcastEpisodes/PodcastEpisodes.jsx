@@ -58,7 +58,7 @@ const PodcastEpisodes = ({ podcastId: initialPodcastId, setSelectedEpisode }) =>
               onClick={() => handleEpisodeClick(episode)}
             >
               <td className="title">
-                <Link to={`/podcast/${initialPodcastId}/episode/${episode.trackId}`}>
+                <Link to={`/podcast/${initialPodcastId}/episode/${episode.trackId}`} className="linkEpisode">
                   {episode.trackName}
                 </Link>
               </td>

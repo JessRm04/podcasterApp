@@ -29,3 +29,8 @@ table {
 .title{
   color:rgb(36, 102, 156)
 }
+
+.linkEpisode{
+  color:rgb(39, 96, 143);
+  text-decoration: none;
+}
