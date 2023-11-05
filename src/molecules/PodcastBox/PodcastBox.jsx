@@ -4,7 +4,7 @@ import './PodcastBox.css';
 import PodcastCard from '../../atoms/PodcastCard/PodcastCard';
 import SearchBar from '../../atoms/Searchbar/Searchbar';
 import PodcastCounter from '../../atoms/PodcastCounter/PodcastCounter';
-import PodcastDescriptionBox from '../../molecules/PodcastDescriptionBox/PodcastDescriptionBox';
+
 
 const PodcastBox = () => {
   const [podcasts, setPodcasts] = useState([]);
