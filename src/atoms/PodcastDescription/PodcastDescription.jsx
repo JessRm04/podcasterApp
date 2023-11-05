@@ -1,5 +1,5 @@
 import React from 'react';
-import './PodcastDescription.css'; 
+import './podcastDescription.css'; 
 
 const PodcastDescription = ({ name, artist, imageUrl }) => {
   return (
