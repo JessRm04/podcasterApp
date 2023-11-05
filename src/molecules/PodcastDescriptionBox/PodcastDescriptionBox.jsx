@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'; // Asegúrate de importar useContext
+import React, { useState, useEffect, useContext } from 'react'; 
 import PodcastDescription from '../../atoms/PodcastDescription/PodcastDescription';
 import PodcastEpisodes from '../../atoms/PodcastEpisodes/PodcastEpisodes';
 import { SelectedEpisodeContext } from '../../Context'
@@ -6,7 +6,7 @@ import './podcastDescriptionBox.css'
 
 const PodcastDescriptionBox = ({ podcastId }) => {
   const [selectedPodcast, setSelectedPodcast] = useState(null);
-  const { setSelectedEpisode } = useContext(SelectedEpisodeContext); // Usa useContext para acceder a setSelectedEpisode
+  const { setSelectedEpisode } = useContext(SelectedEpisodeContext); 
 
   useEffect(() => {
     const fetchPodcast = async () => {
@@ -15,7 +15,6 @@ const PodcastDescriptionBox = ({ podcastId }) => {
           return;
         }
 
-        // Construir la URL del podcast usando el ID
         const podcastUrl = ` https://itunes.apple.com/lookup?id=${podcastId}&entity=podcastEpisode`;
 
         console.log('URL del podcast:', podcastUrl); // Comprobar la URL enviada mediante fetch
@@ -48,7 +47,7 @@ const PodcastDescriptionBox = ({ podcastId }) => {
         artist={selectedPodcast.artistName}
         imageUrl={selectedPodcast.artworkUrl100}
       />
-      <PodcastEpisodes podcastId={podcastId} setSelectedEpisode={setSelectedEpisode} /> {/* Pasa setSelectedEpisode como una prop a PodcastEpisodes */}
+      <PodcastEpisodes podcastId={podcastId} setSelectedEpisode={setSelectedEpisode} /> 
     </div>
   );
 };

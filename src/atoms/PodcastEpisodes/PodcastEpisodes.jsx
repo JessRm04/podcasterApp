@@ -4,11 +4,11 @@ import { PodcastIdContext } from '../../Context'
 import './PodcastEpisodes.css';
 
 const PodcastEpisodes = ({ podcastId: initialPodcastId, setSelectedEpisode }) => {
-  const { setPodcastId } = useContext(PodcastIdContext); // Obtén setPodcastId del contexto
+  const { setPodcastId } = useContext(PodcastIdContext); 
   const [episodes, setEpisodes] = useState([]);
 
   useEffect(() => {
-    setPodcastId(initialPodcastId); // Actualiza podcastId en el contexto
+    setPodcastId(initialPodcastId); 
 
     const fetchEpisodes = async () => {
       try {
@@ -72,7 +72,7 @@ const PodcastEpisodes = ({ podcastId: initialPodcastId, setSelectedEpisode }) =>
   );
 };
 
-// Función para generar una duración aleatoria en el formato MM:SS
+
 const generateRandomDuration = () => {
   const minutes = Math.floor(Math.random() * 24) + 32;
   const seconds = Math.floor(Math.random() * 60);
