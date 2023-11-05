@@ -12,10 +12,10 @@ This project is an interface that displays the top 100 podcasts of the moment on
 ## Check out the project
 
 ### This is the Main Page
-![This is an image](./src/assets/image/mainpage)
+![This is an image](./src/assets/image/mainpage.jpeg)
 ### These are the views for the episodes and the player:
-![This is an image](./src/assets/image/episodes/)
-![This is an image](./src/assets/image/description)
+![This is an image](./src/assets/image/episodes.jpeg)
+![This is an image](./src/assets/image/description.jpeg)
 
 
 ## Tech/framework used 
