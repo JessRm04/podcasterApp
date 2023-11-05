@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { PodcastIdContext } from '../../Context'
-import './podcastEpisodes.css';
+import './PodcastEpisodes.css';
 
 const PodcastEpisodes = ({ podcastId: initialPodcastId, setSelectedEpisode }) => {
   const { setPodcastId } = useContext(PodcastIdContext); // Obtén setPodcastId del contexto
